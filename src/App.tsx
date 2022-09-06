@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Messenger } from './pages/Messenger'
+import { Route, Routes } from 'react-router-dom'
+import { WithSideBarWrapper } from './routes/wrappers'
+import { routes } from './routes'
+import './styles/appStyless.scss'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="layout">
+      {/*<Messenger />*/}
+      <Routes>
+        <Route path={'/'} element={<span>asd</span>} />
+        <Route path={'workspace/'} element={<WithSideBarWrapper />}>
+          {/*<Route path={'messenger'} element={<Messenger />} />*/}
+          <Route index element={<Messenger />} />
+        </Route>
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

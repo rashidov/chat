@@ -1,0 +1,26 @@
+@mixin new {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-color: #565656;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.icon {
+  &-expandShow {
+    @include new();
+    -webkit-mask-image: url('../assets/icons/expandShow.svg');
+    mask-image: url('../assets/icons/expandShow.svg');
+    height: 22px;
+    width: 22px;
+  }
+
+  &-expandHide {
+    @include new();
+    -webkit-mask-image: url('../assets/icons/expandHide.svg');
+    mask-image: url('../assets/icons/expandHide.svg');
+    height: 22px;
+    width: 22px;
+  }
+}
