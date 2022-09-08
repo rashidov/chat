@@ -91,9 +91,15 @@
     }
 
     &-chats {
+      max-height: 328px;
       display: flex;
       flex-direction: column;
+      overflow-y: scroll;
       padding-top: 12px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       &-chatTemplate {
         display: flex;
@@ -142,7 +148,7 @@
         }
 
         &-info {
-          width: 100%;
+          width: calc(100% - 83px);
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -182,15 +188,17 @@
               display: flex;
               gap: 4px;
               font-size: 12px;
-              text-overflow: ellipsis;
 
               &-name {
                 color: #bfc1c4;
               }
 
               &-message {
-                color: #424242;
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
                 text-overflow: ellipsis;
+                color: #424242;
               }
             }
           }

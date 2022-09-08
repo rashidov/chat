@@ -1,8 +1,16 @@
-import { FC } from 'react'
+import React, { FC, useState } from 'react'
+import './style.scss'
+import { Chat } from './components/Chat'
+import { ChatDetails } from './components/ChatDetails'
 
 export const Messenger: FC = () => {
-  const asd = 'aasd'
+  const [isVisibleDetailsState, setIsVisibleDetailsState] = useState(true)
+  const toggleVisibleChatDetails = () => setIsVisibleDetailsState((prev) => !prev)
 
-  // eslint-disable-next-line react/react-in-jsx-scope
-  return <div className="messenger"> messenger</div>
+  return (
+    <div className="messenger">
+      <Chat isVisibleDetailsState={isVisibleDetailsState} toggleVisibleChatDetails={toggleVisibleChatDetails} />
+      <ChatDetails />
+    </div>
+  )
 }
